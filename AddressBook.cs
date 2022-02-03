@@ -38,7 +38,7 @@
             Console.WriteLine("Enter First Name of which you have to edit:");
             string first_name = Console.ReadLine();
             Contacts contact = new Contacts();
-            foreach(var data in address)
+            foreach (var data in address)
             {
                 if (data.FirstName == first_name)
                 {
@@ -93,6 +93,30 @@
                 }
             }
         }
+        public void DeleteContact()
+        {
+            Contacts contact = new Contacts();
+            Console.WriteLine("Enter First Name of Entry to be deleted:");
+            string first_name = Console.ReadLine();
+            foreach (var data in address)
+            {
+                if (data.FirstName == first_name)
+                {
+                    contact = data;
+                    return;
+                }
+            }
+            address.Remove(contact);
+        }
+        public void Display()
+        {
+            Console.WriteLine(address.Count);
+            foreach (var data in address)
+            {
+                Console.WriteLine(data.City);
+            }
+        }
     }
+
 }
 

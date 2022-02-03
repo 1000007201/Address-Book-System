@@ -18,6 +18,14 @@ while (flag)
             addressBook1.UpdateContact();
             break;
         case 3:
+            AddressBook addressBook2 = new AddressBook();
+            addressBook2.DeleteContact();
+            break;
+        case 4:
+            AddressBook addressBook3 = new AddressBook();
+            addressBook3.Display();
+            break;
+        case 5:
             flag = false;
             break;
     }
