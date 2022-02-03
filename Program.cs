@@ -5,7 +5,7 @@ using AddressBookSystem;
 bool flag = true;
 while (flag)
 {
-    Console.WriteLine("Enter Value:\n1.Add to Contacts");
+    Console.WriteLine("Enter Value:\n1.Add new Contact\n2.Update Contact\n3.Exit");
     int option = Convert.ToInt32(Console.ReadLine());
     switch (option)
     {
@@ -14,6 +14,10 @@ while (flag)
             addressBook.CreateContact();
             break;
         case 2:
+            AddressBook addressBook1 = new AddressBook();
+            addressBook1.UpdateContact();
+            break;
+        case 3:
             flag = false;
             break;
     }
