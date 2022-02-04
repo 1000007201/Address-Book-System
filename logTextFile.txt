@@ -1,0 +1,8 @@
+﻿2022-02-04 22:41:34.9797|INFO|AddressBookSystem.Nlog|New Contact Created
+2022-02-04 22:46:31.4195|INFO|AddressBookSystem.Nlog|New Contact Created
+2022-02-04 22:51:21.8770|INFO|AddressBookSystem.Nlog|New Contact Created
+2022-02-04 22:52:59.4267|INFO|AddressBookSystem.Nlog|New Contact Created
+2022-02-04 22:53:22.6828|INFO|AddressBookSystem.Nlog|Contact Updated
+2022-02-04 22:53:28.6140|INFO|AddressBookSystem.Nlog|Contact Updated
+2022-02-04 22:54:36.4305|INFO|AddressBookSystem.Nlog|New Contact Created
+2022-02-04 22:54:42.9039|INFO|AddressBookSystem.Nlog|Contact Deleted

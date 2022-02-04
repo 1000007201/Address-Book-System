@@ -1,7 +1,9 @@
-﻿namespace AddressBookSystem
+﻿using AddressBookSystem;
+namespace AddressBookSystem
 {
     public class AddressBook
     {
+        Nlog nlog = new Nlog();
         List<Contacts> address = new List<Contacts>();
         public void CreateContact()
         {
@@ -29,23 +31,29 @@
 
             Console.WriteLine("Enter Zip:");
             contacts.Zip = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"Created Contact:\n{contacts.FirstName}\n{contacts.LastName}\n{contacts.Address}" +
-                $"{contacts.PhoneNumber}\n{contacts.State}\n{contacts.City}\n{contacts.Email}\n{contacts.Zip}");
+
+            Display(contacts);
             address.Add(contacts);
+            nlog.LogInfo("New Contact Created");
         }
         public void UpdateContact()
         {
+            Contacts contact = new Contacts();
             Console.WriteLine("Enter First Name of which you have to edit:");
             string first_name = Console.ReadLine();
-            Contacts contact = new Contacts();
             foreach (var data in address)
             {
                 if (data.FirstName == first_name)
                 {
                     contact = data;
-                    return;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Enter Right Name!!");
                 }
             }
+            Display(contact);
 
             bool flag = true;
             while (flag)
@@ -91,6 +99,8 @@
                         flag = false;
                         break;
                 }
+                Display(contact);
+                nlog.LogInfo("Contact Updated");
             }
         }
         public void DeleteContact()
@@ -103,18 +113,22 @@
                 if (data.FirstName == first_name)
                 {
                     contact = data;
-                    return;
+                    break;
                 }
             }
             address.Remove(contact);
+            nlog.LogInfo("Contact Deleted");
         }
-        public void Display()
+        public void Display(Contacts contact)
         {
-            Console.WriteLine(address.Count);
-            foreach (var data in address)
-            {
-                Console.WriteLine(data.City);
-            }
+            Console.WriteLine("First Name:" + contact.FirstName);
+            Console.WriteLine("Last Name:" + contact.LastName);
+            Console.WriteLine("Address:" + contact.Address);
+            Console.WriteLine("Phone Number:" + contact.PhoneNumber);
+            Console.WriteLine("State:" + contact.State);
+            Console.WriteLine("City:" + contact.City);
+            Console.WriteLine("Email:" + contact.Email);
+            Console.WriteLine("Zip:" + contact.Zip);
         }
     }
 
