@@ -5,7 +5,7 @@ using AddressBookSystem;
 bool flag = true;
 while (flag)
 {
-    Console.WriteLine("Enter Value:\n1.Add to Contacts");
+    Console.WriteLine("Enter Value:\n1.Add to Contacts\n2.Exit");
     int option = Convert.ToInt32(Console.ReadLine());
     switch (option)
     {
