@@ -5,6 +5,7 @@ namespace AddressBookSystem
     {
         Nlog nlog = new Nlog();
         List<Contacts> address = new List<Contacts>();
+        Dictionary<string,Contacts> addressdict = new Dictionary<string,Contacts>();
         public void CreateContact()
         {
             Contacts contacts = new Contacts();
@@ -34,6 +35,7 @@ namespace AddressBookSystem
 
             Display(contacts);
             address.Add(contacts);
+            addressdict.Add(contacts.FirstName, contacts);
             nlog.LogInfo("New Contact Created");
         }
         public void UpdateContact()
@@ -101,7 +103,9 @@ namespace AddressBookSystem
                 }
                 Display(contact);
                 nlog.LogInfo("Contact Updated");
+
             }
+           
         }
         public void DeleteContact()
         {
@@ -115,8 +119,14 @@ namespace AddressBookSystem
                     contact = data;
                     break;
                 }
+                else
+                {
+                    Console.WriteLine("Give correct Input!!");
+                    return;
+                }
             }
             address.Remove(contact);
+            addressdict.Remove(contact.FirstName);
             nlog.LogInfo("Contact Deleted");
         }
         public void Display(Contacts contact)

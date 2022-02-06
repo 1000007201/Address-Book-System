@@ -6,3 +6,7 @@
 2022-02-04 22:53:28.6140|INFO|AddressBookSystem.Nlog|Contact Updated
 2022-02-04 22:54:36.4305|INFO|AddressBookSystem.Nlog|New Contact Created
 2022-02-04 22:54:42.9039|INFO|AddressBookSystem.Nlog|Contact Deleted
+2022-02-06 23:18:37.4377|INFO|AddressBookSystem.Nlog|New Contact Created
+2022-02-06 23:19:01.4597|INFO|AddressBookSystem.Nlog|Contact Updated
+2022-02-06 23:19:07.8651|INFO|AddressBookSystem.Nlog|Contact Updated
+2022-02-06 23:19:19.8266|INFO|AddressBookSystem.Nlog|Contact Deleted
